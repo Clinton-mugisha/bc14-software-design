@@ -61,30 +61,62 @@ class Bluetooth(ABC):
 class Smartphone(WifiConnect, Bluetooth):
     def wifi_connection(self):
         return "Connecting"
-
+    
+    def blue_tooth(self):
+        print("connects to bluetooth")
 
 class Laptop(WifiConnect, Bluetooth):
     def wifi_connection(self):
         print("Enter password")
 
+    def blue_tooth(self):
+        print("connects to bluetooth")
 
-class RaspberryPi(WifiConnect):
+class Walltop(WifiConnect):
     def wifi_connection(self):
         print("Connecting")
+
+    def blue_tooth(self):
+        print("Connecting to bluetooth")
 
 
 class SmartWatch(WifiConnect, Bluetooth):
     def wifi_connection(self):
         print("Connecting")
 
+    def blue_tooth(self):
+        print("Connects to bluetooth")
+
 
 # Update ButtonPhone to match the InputDevice interface
-class ButtonPhone(InputDevice):
-    def input(self):
-        print("Inputting data from Button Phone")
+class OldModelComputer(Bluetooth):
+    def blue_tooth(self):
+        print("Connecting to bluetooth")
 
 
 # Create a ButtonPhone instance
-button_phone = ButtonPhone()
-computer1.set_input_device(button_phone)
+
+
+computer1 = Computer(Keyboard())
+smartphone = Smartphone()
+laptop = Laptop()
+walltop = Walltop()
+smartwatch = SmartWatch()
+old_model = OldModelComputer()
 test_computer(computer1)
+
+print(smartphone.wifi_connection())
+smartphone.blue_tooth()
+
+laptop.wifi_connection()
+laptop.blue_tooth()
+
+walltop.wifi_connection()
+walltop.blue_tooth()
+
+smartphone.wifi_connection()
+smartphone.blue_tooth()
+
+old_model.blue_tooth()
+
+

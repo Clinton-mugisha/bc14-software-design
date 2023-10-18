@@ -101,25 +101,50 @@ class Desktop extends Computer implements WiFiSupportedDevice, BluetoothSupporte
     }
 }
 
-class Laptop extends Computer{
+class Laptop extends Computer implements WiFiSupportedDevice, BluetoothSupportedDevice{
     // We can add extra functionality to this class   
     fold(){}
+    connectToWIFI(){
+        console.log('Connecting to wifi.');
+    }
+
+    connectToBleatooth(){
+        console.log('Connecting to Bluetooth.');
+    }
 }
 
-class Walltop extends Computer{
+
+class Walltop extends Computer implements WiFiSupportedDevice, BluetoothSupportedDevice{
     // We can add extra functionality to this class   
     hang(){}
+    connectToWIFI(){
+        console.log('Connecting to wifi.');
+    }
+
+    connectToBleatooth(){
+        console.log('Connecting to Bluetooth.');
+    }
 }
 
-class SmartPhone extends Computer{
+class SmartPhone extends Computer implements WiFiSupportedDevice, BluetoothSupportedDevice{
     // We can add extra functionality to this class   
     screenTouch(){}
+    connectToWIFI(){
+        console.log('Connecting to wifi.');
+    }
+
+    connectToBleatooth(){
+        console.log('Connecting to Bluetooth.');
+    }
 }
 
-class OldModelComputer extends Computer{
+class OldModelComputer extends Computer implements BluetoothSupportedDevice{
     // We can add extra functionality to this class
     legacyMethod(){
+    }
 
+    connectToBleatooth(){
+        console.log('Connecting to Bluetooth.');
     }
 } 
 
